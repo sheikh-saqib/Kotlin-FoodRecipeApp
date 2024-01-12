@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.cookbook.app.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_recipesFilter"
+            app:destination="@id/recipesFilter" />
+        <argument
+            android:name="backFromFilter"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_navigation_home_to_recipeDetailsActivity"
+            app:destination="@id/recipeDetailsActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.cookbook.app.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_recipeDetailsActivity"
+            app:destination="@id/recipeDetailsActivity" />
+    </fragment>
+    <dialog
+        android:id="@+id/recipesFilter"
+        android:name="com.cookbook.app.ui.home.filterMenu.RecipesFilter"
+        android:label="fragment_recipes_filter"
+        tools:layout="@layout/fragment_recipes_filter" >
+        <action
+            android:id="@+id/action_recipesFilter_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </dialog>
+    <activity
+        android:id="@+id/recipeDetailsActivity"
+        android:name="com.cookbook.app.ui.RecipeDetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_recipe_details" />
+    <argument
+        android:name="result"
+        app:argType="com.cookbook.app.models.Result" />
+</navigation>
