@@ -2,7 +2,7 @@ package com.cookbook.app.utilities
 
 class ProjectConstants {
     companion object{
-        const val apiKey = "edb554f9f1msh92f9a8f06ff98a0p1b5551jsn7a9102e4748c"
+        const val apiKey = ""
         const val baseUrl = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         const val baseImgUrl = "https://spoonacular.com/cdn/ingredients_100x100/"
 
@@ -33,8 +33,6 @@ class ProjectConstants {
         const val pref_diet_type = "dietType"
         const val pref_diet_type_Id = "dietTypeId"
         const val pref_Name = "user_preferences"
-
-        // Search Bar
 
     }
 }
